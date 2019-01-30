@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CollectionViewExemplo" 
+             x:Class="CollectionViewExemplo.MainPage" Title="Nova CollectionView">
+    
+        <StackLayout>
+ 
+        <CollectionView x:Name="cvGames"
+                        ItemsSource="{Binding Games}" 
+                        Margin="10,0,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout HeightRequest="50" WidthRequest="200" Orientation="Vertical" Padding="0,5,0,5">
+                        <Label Text="{Binding Nome}" FontAttributes="Bold"/>
+                        <Label Text="{Binding TituloBR}" TextColor="Red" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+                 <CollectionView.EmptyView>
+                    <Label Text="Não temos games para Exibir :("/>
+                </CollectionView.EmptyView>
+        </CollectionView>
+ 
+    
+   <!-- 
+      <CollectionView x:Name="cvGames" ItemsSource="{Binding Games}"  Margin="10,0,10,600">
+          <CollectionView.ItemsLayout>
+              <GridItemsLayout Orientation="Horizontal" Span="2"/>
+          </CollectionView.ItemsLayout>
+          <CollectionView.ItemTemplate>
+              <DataTemplate>
+                  <Frame BorderColor="Red" CornerRadius="3" HasShadow="False" >
+                      <Grid>
+                          <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="100"/>
+                              <ColumnDefinition Width="100" />
+                          </Grid.ColumnDefinitions>
+                          <Grid.RowDefinitions>
+                              <RowDefinition Height="Auto"/>
+                          </Grid.RowDefinitions>
+                          <Label Grid.Column="0" Text="{Binding Nome}"  FontAttributes="Bold"/>
+                          <Label Grid.Column="1" Text="{Binding TituloBR}" />
+                      </Grid>
+                  </Frame>
+              </DataTemplate>
+          </CollectionView.ItemTemplate>
+      </CollectionView>
+    -->
+
+       <!-- <CarouselView  x:Name="cvGames"
+                    ItemsSource="{Binding Games}" 
+                    HeightRequest="200" 
+                    HorizontalOptions="Center" 
+                   
+                    VerticalOptions="CenterAndExpand" 
+                    Margin="10">
+        <CarouselView.ItemsLayout>
+            <GridItemsLayout Orientation="Horizontal"
+                    SnapPointsAlignment="Center" 
+                    SnapPointsType="Mandatory"/>
+        </CarouselView.ItemsLayout>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Red" CornerRadius="3" HasShadow="False">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                      <ColumnDefinition Width="100"/>
+                                      <ColumnDefinition Width="100" />
+                                  </Grid.ColumnDefinitions>
+                                  <Grid.RowDefinitions>
+                                      <RowDefinition Height="Auto"/>
+                                  </Grid.RowDefinitions>
+                                  <Label Grid.Column="0" Text="{Binding Nome}"  FontAttributes="Bold"/>
+                                  <Label Grid.Column="1" Text="{Binding TituloBR}" />
+                              </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <StackLayout VerticalOptions="StartAndExpand">
+                <Slider Minimum="0" Maximum="4" ValueChanged="Slider_ValueChanged" MinimumTrackColor="#01579b" MaximumTrackColor="#01579b" ThumbColor="#9575cd"/>
+        </StackLayout>-->
+  </StackLayout>
+</ContentPage>
